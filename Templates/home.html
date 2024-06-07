@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Boston House Price Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+d+c7f4T1c1AA8y1lpFFopQyVnEzXOC+0VlGcJkaXDOyx7LZp5R0GcT6nO9VA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Boston House Price Prediction</h1>
+            <form action="{{ url_for('predict') }}" method="post" id="predictionForm">
+                <div class="form-group">
+                    <input type="text" name="MedInc" placeholder="Median Income" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="HouseAge" placeholder="House Age" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="AveRooms" placeholder="Average Rooms" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="AveBedrms" placeholder="Average Bedrooms" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Population" placeholder="Population" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="AveOccup" placeholder="Average Occupants" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Latitude" placeholder="Latitude" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Longitude" placeholder="Longitude" required />
+                </div>
+                <button type="submit" class="btn">Predict</button>
+            </form>
+            <div id="predictionResult">{{ prediction_text }}</div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
