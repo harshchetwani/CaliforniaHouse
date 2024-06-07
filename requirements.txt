@@ -1,5 +1,0 @@
-Flask
-sklearn
-panda 
-numpy 
-matplotlib
